@@ -1,7 +1,9 @@
-package com.example.bartelsl.photowalk;
+package amble.activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.example.bartelsl.photowalk.R;
 
 public class MainActivity extends AppCompatActivity {
 
