@@ -17,16 +17,31 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+<<<<<<< HEAD
         <activity android:name="amble.activity.MainActivity">
+=======
+        <activity android:name=".Login"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait">
+>>>>>>> 124acd3d58461921aa808bcff96b93150fbdaf37
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".CreateWalk" />
-        <activity android:name=".JoinWalk" />
-        <activity android:name=".Home"></activity>
+        <activity android:name=".Register"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".CreateWalk"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".JoinWalk"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Home"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"></activity>
     </application>
 
 </manifest>

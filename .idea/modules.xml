@@ -3,7 +3,10 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/AmbleApp.iml" filepath="$PROJECT_DIR$/AmbleApp.iml" />
+<<<<<<< HEAD
       <module fileurl="file://$PROJECT_DIR$/PhotoWalk.iml" filepath="$PROJECT_DIR$/PhotoWalk.iml" />
+=======
+>>>>>>> 124acd3d58461921aa808bcff96b93150fbdaf37
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
