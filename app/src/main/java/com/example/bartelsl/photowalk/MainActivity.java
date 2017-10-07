@@ -1,4 +1,4 @@
-package amble.activity;
+package com.example.bartelsl.photowalk;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
