@@ -3,7 +3,9 @@ package amble.service;
 import amble.model.User;
 import retrofit2.Call;
 import retrofit2.http.Body;
+import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.Path;
 
 /**
  * Created by hintzl on 07.10.2017.
@@ -11,6 +13,9 @@ import retrofit2.http.POST;
 
 public interface UserClient {
 
-    @POST("/register")
-    Call<User> createAccount(@Body User user);
+    @POST("users")
+    static Call<User> createAccount(@Body User user);
+
+    @GET("users/{username}")
+    Call<User> getUserByUsername(@Path("username" )String name );
 }

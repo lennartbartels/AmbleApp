@@ -1,8 +1,10 @@
 package amble.service;
 
+import java.util.List;
+
 import amble.model.Photowalk;
-import amble.model.PhotowalkResponse;
 import retrofit2.Call;
+import retrofit2.http.Body;
 import retrofit2.http.GET;
 
 /**
@@ -11,5 +13,5 @@ import retrofit2.http.GET;
 
 public interface PhotowalkApiService {
     @GET("/walks/")
-    Call<PhotowalkResponse>
+    Call<List<Photowalk>> getPhotowalks(@Body Photowalk photowalk);
 }

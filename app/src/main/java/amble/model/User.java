@@ -1,80 +1,58 @@
 package amble.model;
 
+import android.app.Activity;
+
 import com.google.gson.annotations.SerializedName;
 
 /**
  * Created by hintzl on 05.10.2017.
  */
 
-public class User {
-
-    @SerializedName("id")
-    private Integer id;
-    @SerializedName("username")
-    private String username;
-    @SerializedName("lastname")
-    private String lastname;
-    @SerializedName("emailadress")
-    private String emailaddress;
-    @SerializedName("firstname")
+public class User{
+    private String username ;
     private String firstname;
-    @SerializedName("password")
-    private String password;
+    private String lastname;
+    private String emailadress;
 
-    public User(String username, String lastname, String emailaddress, String firstname, String password) {
-        this.username = username;
-        this.lastname = lastname;
-        this.emailaddress = emailaddress;
-        this.firstname = firstname;
-        this.password = password;
+    @Override
+    public String toString() {
+        return "User{" +
+                "username='" + username + '\'' +
+                ", firstname='" + firstname + '\'' +
+                ", lastname='" + lastname + '\'' +
+                ", emailadress='" + emailadress + '\'' +
+                '}';
     }
 
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
+    public String getUsername() {
+        return username;
     }
 
     public void setUsername(String username) {
         this.username = username;
     }
 
-    public void setLastname(String lastname) {
-        this.lastname = lastname;
-    }
-
-    public void setEmailaddress(String emailaddress) {
-        this.emailaddress = emailaddress;
+    public String getFirstname() {
+        return firstname;
     }
 
     public void setFirstname(String firstname) {
         this.firstname = firstname;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public String getUsername() {
-        return username;
-
-    }
-
     public String getLastname() {
         return lastname;
     }
 
-    public String getEmailaddress() {
-        return emailaddress;
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
     }
 
-    public String getFirstname() {
-        return firstname;
+    public String getEmailadress() {
+        return emailadress;
     }
 
-    public String getPassword() {
-        return password;
+    public void setEmailadress(String emailadress) {
+        this.emailadress = emailadress;
     }
 }

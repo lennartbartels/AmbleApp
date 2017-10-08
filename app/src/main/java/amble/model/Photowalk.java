@@ -1,14 +1,16 @@
 package amble.model;
+import android.app.Activity;
+
 import java.util.Date;
 
 import com.google.gson.annotations.SerializedName;
-import com.imbit.photowalk.backend.domain.entity.Route;
+
 
 /**
  * Created by hintzl on 08.10.2017.
  */
 
-public class Photowalk {
+public class Photowalk extends Activity{
     @SerializedName("photowalkId")
     private Integer photowalkId;
     @SerializedName("name")
@@ -26,8 +28,9 @@ public class Photowalk {
     @SerializedName("owner")
     private User owner;
 
-    public Photowalk(Integer photowalkId, String name, Integer duration, Date date, String description, String startpoint, String endpoint, User owner) {
-        this.photowalkId = photowalkId;
+    public Photowalk(){}
+
+    public Photowalk(String name, Integer duration, Date date, String description, String startpoint, String endpoint, User owner) {
         this.name = name;
         this.duration = duration;
         this.date = date;
