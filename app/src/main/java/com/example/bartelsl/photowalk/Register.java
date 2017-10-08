@@ -1,11 +1,13 @@
 package com.example.bartelsl.photowalk;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -13,6 +15,7 @@ public class Register extends Activity implements AdapterView.OnItemSelectedList
 
     Spinner selectRole;
     ArrayAdapter adapter;
+    Button RegisterBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +29,16 @@ public class Register extends Activity implements AdapterView.OnItemSelectedList
         selectRole = (Spinner) findViewById(R.id.spnSelectRole);
         selectRole.setAdapter(adapter);
         selectRole.setOnItemSelectedListener(Register.this);
+
+
+        RegisterBtn = (Button) findViewById(R.id.btnRegister);
+        RegisterBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent moveToRegister = new Intent(Register.this, Home.class);
+                startActivity(moveToRegister);
+            }
+        });
     }
 
     @Override

@@ -34,5 +34,13 @@ public class Login extends Activity {
                 startActivity(moveToRegister);
             }
         });
+
+        signInBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent moveToRegister = new Intent(Login.this, Home.class);
+                startActivity(moveToRegister);
+            }
+        });
     }
 }
