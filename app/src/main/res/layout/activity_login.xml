@@ -39,7 +39,8 @@
         android:textColorHint="#585858"
         android:textCursorDrawable="@android:color/black"
         tools:layout_editor_absoluteX="42dp"
-        tools:layout_editor_absoluteY="92dp" />
+        tools:layout_editor_absoluteY="92dp"
+        style="@style/EditText1"/>
 
     <TextView
         android:id="@+id/tvJoinMillionsOfUsers"
@@ -53,7 +54,8 @@
         android:textColor="#000000"
         android:textSize="18sp"
         tools:layout_editor_absoluteX="107dp"
-        tools:layout_editor_absoluteY="45dp" />
+        tools:layout_editor_absoluteY="45dp"
+        style="@style/EditText1"/>
 
     <EditText
         android:id="@+id/etPassword"
@@ -69,7 +71,8 @@
         android:textColorHint="#585858"
         android:textCursorDrawable="@android:color/black"
         tools:layout_editor_absoluteX="42dp"
-        tools:layout_editor_absoluteY="135dp" />
+        tools:layout_editor_absoluteY="135dp"
+        style="@style/EditText1"/>
 
     <Button
         android:id="@+id/btnSignIn"

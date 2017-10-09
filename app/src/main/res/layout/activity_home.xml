@@ -7,14 +7,29 @@
     android:background="@drawable/background"
     tools:context="com.example.bartelsl.photowalk.JoinWalk">
 
+    <EditText
+        android:id="@+id/etSearch"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/lvWalks"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/lvWalks"
+        android:layout_marginTop="48dp"
+        android:backgroundTint="#27c3bc"
+        android:ems="10"
+        android:hint="Type in a location"
+        android:inputType="textPersonName"
+        android:textColor="@android:color/black"
+        android:textColorHint="#585858" />
+
+
     <Button
         android:id="@+id/btnCreateWalk"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Create Walk"
-        android:layout_marginBottom="32dp"
         style="@style/Button1"
-        android:layout_alignParentBottom="true"
+        android:layout_above="@+id/btnWalk1"
         android:layout_centerHorizontal="true" />
 
     <Button
@@ -22,25 +37,44 @@
         style="@style/Button1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Walk1 (provisorisch!)"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="11dp" />
+        android:text="(PROVISORISCH)"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="14dp" />
 
     <Button
         android:id="@+id/btnLogout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
+        android:text="Logout"
+        android:layout_below="@+id/btnCreateWalk"
         android:layout_alignParentRight="true"
-        android:text="Logout" />
+        android:layout_alignParentEnd="true" />
 
     <ListView
         android:id="@+id/lvWalks"
-        android:layout_width="330dp"
-        android:layout_height="400dp"
-        android:layout_below="@+id/btnWalk1"
+        android:layout_width="300dp"
+        android:layout_height="330dp"
+        android:layout_below="@+id/btnSearch"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="18dp" />
+        android:layout_marginTop="12dp"
+        android:divider="#585858"
+        android:dividerHeight="1dp"
+        android:scrollbars="none|vertical"
+        android:visibility="visible" />
+
+    <Button
+        android:id="@+id/btnSearch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#27c3bc"
+        android:text="Search"
+        android:layout_alignBaseline="@+id/etSearch"
+        android:layout_alignBottom="@+id/etSearch"
+        android:layout_toRightOf="@+id/btnCreateWalk"
+        android:layout_toEndOf="@+id/btnCreateWalk" />
+
+
+
 </RelativeLayout>
