@@ -5,7 +5,7 @@ android {
     buildToolsVersion "26.0.1"
     defaultConfig {
         applicationId "com.example.bartelsl.photowalk"
-        minSdkVersion 15
+        minSdkVersion 24
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
@@ -13,6 +13,7 @@ android {
         jackOptions {
             enabled true
         }
+        multiDexEnabled true //important
     }
 
     buildTypes {
@@ -24,6 +25,7 @@ android {
     compileOptions {
         targetCompatibility 1.8
         sourceCompatibility 1.8
+        incremental false
 
     }
 }

@@ -1,4 +1,4 @@
-package amble.rest;
+package amble.main;
 
 import amble.service.UserClient;
 import retrofit2.Retrofit;

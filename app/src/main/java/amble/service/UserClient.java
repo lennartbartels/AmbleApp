@@ -14,7 +14,7 @@ import retrofit2.http.Path;
 public interface UserClient {
 
     @POST("users")
-    static Call<User> createAccount(@Body User user);
+    Call<Void> createAccount(@Body User user);
 
     @GET("users/{username}")
     Call<User> getUserByUsername(@Path("username" )String name );
