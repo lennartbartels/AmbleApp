@@ -10,7 +10,7 @@ import android.widget.ListView;
 
 public class Home extends Activity {
 
-    //ListView WalkListe;
+    //ListView WalkListe
     Button CreateWalkBtn;
     Button Walk1Btn;
     Button LogoutBtn;
