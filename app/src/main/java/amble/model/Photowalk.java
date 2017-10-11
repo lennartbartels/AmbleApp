@@ -11,34 +11,29 @@ import com.google.gson.annotations.SerializedName;
  */
 
 public class Photowalk extends Activity{
-    @SerializedName("photowalkId")
+
     private Integer photowalkId;
-    @SerializedName("name")
     private String name;
-    @SerializedName("duration")
     private Integer duration;
-    @SerializedName("date")
-    private Date date;
-    @SerializedName("description")
+  //  private Date date;
     private String description;
-    @SerializedName("startpoint")
     private String startpoint;
-    @SerializedName("endpoint")
     private String endpoint;
-    @SerializedName("owner")
-    private User owner;
 
-    public Photowalk(){}
 
-    public Photowalk(String name, Integer duration, Date date, String description, String startpoint, String endpoint, User owner) {
+      public Photowalk(String name, Integer duration, String description, String startpoint, String endpoint) {
         this.name = name;
         this.duration = duration;
-        this.date = date;
+        //this.date = date;
         this.description = description;
         this.startpoint = startpoint;
         this.endpoint = endpoint;
-        this.owner = owner;
+
     }
+
+
+    public String getPhotoWalk() {
+        return name;}
 
     public Integer getPhotowalkId() {
         return photowalkId;
@@ -64,13 +59,9 @@ public class Photowalk extends Activity{
         this.duration = duration;
     }
 
-    public Date getDate() {
-        return date;
-    }
+   // public Date getDate() {return date;    }
 
-    public void setDate(Date date) {
-        this.date = date;
-    }
+    //public void setDate(Date date) {this.date = date;    }
 
     public String getDescription() {
         return description;
@@ -96,11 +87,8 @@ public class Photowalk extends Activity{
         this.endpoint = endpoint;
     }
 
-    public User getOwner() {
-        return owner;
+    //public User getOwner() {return owner;   }
+
+    //public void setOwner(User owner) {this.owner = owner;
     }
 
-    public void setOwner(User owner) {
-        this.owner = owner;
-    }
-}

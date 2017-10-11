@@ -1,5 +1,6 @@
 package amble.main;
 
+import amble.model.Photowalk;
 import amble.model.User;
 import amble.service.PhotowalkApiService;
 import amble.service.UserClient;
@@ -15,6 +16,7 @@ public class RestClient {
     private static UserClient userClient;
     private static PhotowalkApiService photoWalk;
     private static User currentUser;
+    private static Photowalk currentPhotowalk;
 
     public static void init() {
 
@@ -44,5 +46,7 @@ public class RestClient {
     public static User getCurrentUser(){return currentUser;}
 
     public static PhotowalkApiService getPhotoWalk(){ return photoWalk;}
+
+    public static void setCurrentPhotowalk(Photowalk phtwlk) {currentPhotowalk = phtwlk;}
 
 }
