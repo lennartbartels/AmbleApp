@@ -67,4 +67,8 @@ public class User{
     public void setEmailadress(String emailadress) {
         this.emailadress = emailadress;
     }
+
+    public String getPassword(){ return password;}
+
+    public void setPassword(String password) { this.password = password;}
 }
