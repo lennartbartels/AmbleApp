@@ -43,4 +43,6 @@ public class RestClient {
 
     public static User getCurrentUser(){return currentUser;}
 
+    public static PhotowalkApiService getPhotoWalk(){ return photoWalk;}
+
 }
