@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.bartelsl.photowalk">
 
+
     <uses-sdk
         android:minSdkVersion="16"
         android:targetSdkVersion="26" />
@@ -18,8 +19,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
-
         <activity android:name=".Login">
 
             <intent-filter>
@@ -28,10 +27,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="amble.main.MainActivity"></activity>
+        <activity android:name="amble.model.Photowalk" />
+        <activity android:name="amble.model.User"></activity>
         <activity android:name=".Register" />
         <activity android:name=".CreateWalk" />
         <activity android:name=".JoinWalk" />
-        <activity android:name=".Home" android:windowSoftInputMode="adjustPan"/>
+        <activity android:name=".Home">
+        </activity>
     </application>
 
 </manifest>

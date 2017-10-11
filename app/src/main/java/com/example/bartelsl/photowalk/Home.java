@@ -16,7 +16,7 @@ import static com.example.bartelsl.photowalk.R.id.parent;
 
 public class Home extends Activity {
 
-    //ListView WalkListe;
+    //ListView WalkListe
     Button CreateWalkBtn;
     Button Walk1Btn;
     Button LogoutBtn;
