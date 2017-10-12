@@ -76,7 +76,7 @@ public class CreateWalk extends Activity {
         photoWalkcall.enqueue(new Callback<Void>() {
             @Override
             public void onResponse(Call<Void> call, Response<Void> response) {
-                retrofit.getPhotoWalkByName(photowalk.getPhotoWalk()).enqueue(new Callback<Photowalk>() {
+                retrofit.getPhotoWalkByName(photowalk.getName()).enqueue(new Callback<Photowalk>() {
                     @Override
                     public void onResponse(Call<Photowalk> call, Response<Photowalk> response) {
                         Photowalk phtwlk = response.body();

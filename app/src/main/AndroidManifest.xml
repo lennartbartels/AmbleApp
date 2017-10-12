@@ -28,8 +28,6 @@
             </intent-filter>
         </activity>
         <activity android:name="amble.main.MainActivity"></activity>
-        <activity android:name="amble.model.Photowalk" />
-        <activity android:name="amble.model.User"></activity>
         <activity android:name=".Register" />
         <activity android:name=".CreateWalk" />
         <activity android:name=".JoinWalk" />
