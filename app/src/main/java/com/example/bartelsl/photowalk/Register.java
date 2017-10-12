@@ -93,7 +93,7 @@ public class Register extends Activity implements AdapterView.OnItemSelectedList
                             Intent moveToRegister = new Intent(Register.this, Home.class);
                             startActivity(moveToRegister);
                         } else {
-                            Toast.makeText(Register.this, "Registration failed.", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(Register.this, "Registration failed. User not found.", Toast.LENGTH_SHORT).show();
                         }
 
                     }
