@@ -10,7 +10,7 @@ import com.google.gson.annotations.SerializedName;
  * Created by hintzl on 08.10.2017.
  */
 
-public class Photowalk extends Activity{
+public class Photowalk {
 
     private Integer photowalkId;
     private String name;
