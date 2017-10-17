@@ -7,22 +7,37 @@
     android:background="@drawable/background"
     tools:context="com.example.bartelsl.photowalk.CreateWalk">
 
+    <EditText
+        android:id="@+id/etStartTime"
+        style="@style/EditText1"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="132dp"
+        android:ems="10"
+        android:hint="Start Time"
+        android:inputType="text"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <Button
         android:id="@+id/btnCreateWalk"
+        style="@style/Button1"
         android:layout_width="250dp"
         android:layout_height="50dp"
         android:layout_marginBottom="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="30dp"
         android:onClick="jumpToPage"
         android:text="Create this Walk"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/eTDescription"
-        style="@style/Button1"
-        app:layout_constraintVertical_bias="0.218" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <EditText
         android:id="@+id/eTDate"
@@ -30,7 +45,7 @@
         android:layout_height="50dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="75dp"
         android:ems="10"
         android:hint="Date"
         android:inputType="date"
@@ -40,12 +55,27 @@
         style="@style/EditText1"/>
 
     <EditText
+        android:id="@+id/eTName"
+        style="@style/EditText1"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="Name"
+        android:inputType="text"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
         android:id="@+id/eTStartPoint"
         android:layout_width="250dp"
         android:layout_height="50dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="66dp"
         android:ems="10"
         android:hint="Start Point"
         android:inputType="text"
@@ -88,9 +118,9 @@
         android:id="@+id/eTDescription"
         style="@style/EditText1"
         android:layout_width="250dp"
-        android:layout_height="150dp"
+        android:layout_height="100dp"
         android:layout_marginRight="8dp"
-        android:layout_marginTop="9dp"
+        android:layout_marginTop="2dp"
         android:ems="10"
         android:hint="Decription"
         android:inputType="textMultiLine"
