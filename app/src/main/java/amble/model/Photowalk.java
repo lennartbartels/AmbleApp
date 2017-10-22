@@ -18,7 +18,7 @@ public class Photowalk extends Activity{
     @SerializedName("duration")
     private Integer duration;
     @SerializedName("date")
-    private Date date;
+    private String date;
     @SerializedName("description")
     private String description;
     @SerializedName("startpoint")
@@ -28,16 +28,13 @@ public class Photowalk extends Activity{
     @SerializedName("owner")
     private User owner;
 
-    public Photowalk(){}
-
-    public Photowalk(String name, Integer duration, Date date, String description, String startpoint, String endpoint, User owner) {
+    public Photowalk(String name, String date, String startpoint, String endpoint, Integer duration, String description) {
         this.name = name;
-        this.duration = duration;
         this.date = date;
-        this.description = description;
         this.startpoint = startpoint;
         this.endpoint = endpoint;
-        this.owner = owner;
+        this.duration = duration;
+        this.description = description;
     }
 
     public Integer getPhotowalkId() {
@@ -64,11 +61,11 @@ public class Photowalk extends Activity{
         this.duration = duration;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 

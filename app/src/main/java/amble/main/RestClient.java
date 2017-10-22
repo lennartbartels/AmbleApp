@@ -1,6 +1,7 @@
 package amble.main;
 
 import amble.model.User;
+import amble.model.Photowalk;
 import amble.service.PhotowalkApiService;
 import amble.service.SessionClient;
 import amble.service.UserClient;
@@ -16,8 +17,14 @@ public class RestClient {
     private static UserClient userClient;
     private static SessionClient sessionClient;
     private static PhotowalkApiService photoWalk;
+    private static PhotowalkApiService photowalkApiService;
     private static User currentUser;
+
     private static String token;
+
+    private static Photowalk currentPhotowalk;
+
+
     public static void init() {
 
 /*
@@ -51,6 +58,10 @@ public class RestClient {
 
     public static SessionClient getSessionClient() {
         return sessionClient;
+    }
 
+
+    public static PhotowalkApiService getPhotowalkApiService() {
+        return photowalkApiService;
     }
 }
