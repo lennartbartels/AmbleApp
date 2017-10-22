@@ -12,6 +12,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.util.Objects;
+
+import amble.exceptions.NotLoggedinException;
 import amble.main.RestClient;
 import amble.model.Photowalk;
 import amble.model.User;
@@ -63,12 +66,19 @@ public class CreateWalk extends Activity {
         });
     }
 
-    private void sendNetworkrequest(Photowalk photowalk) {
-        Call<Void> walkcall = retrofit.createWalk(photowalk);
+    private void sendNetworkrequest(Photowalk photowalk)
+
+    {
+        String token = RestClient.getToken();
+        if (token == null ){throw new NotLoggedinException();}
+
+
+        Call<Void> walkcall = retrofit.createWalk(photowalk,token);
         walkcall.enqueue(new Callback<Void>() {
+
             @Override
             public void onResponse(Call<Void> call, Response<Void> response) {
-                retrofit.getSinglePW(photowalk.getName()).enqueue(new Callback<Photowalk>() {
+                retrofit.getSinglePW(photowalk.getName(),token).enqueue(new Callback<Photowalk>() {
                     @Override
                     public void onResponse(Call<Photowalk> call, Response<Photowalk> response) {
                         Photowalk phwalk = response.body();

@@ -6,6 +6,7 @@ import amble.model.Photowalk;
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
+import retrofit2.http.Header;
 import retrofit2.http.POST;
 
 /**
@@ -14,12 +15,12 @@ import retrofit2.http.POST;
 
 public interface PhotowalkApiService {
     @GET("/walks/")
-    Call<List<Photowalk>> getPhotowalks(@Body Photowalk photowalk);
+    Call<List<Photowalk>> getPhotowalks(@Body Photowalk photowalk, @Header("token")String token);
 
     @GET("/walks/")
-    Call<Photowalk> getSinglePW(String name);
+    Call<Photowalk> getSinglePW(String name,@Header("token")String token);
 
     @POST("/createwalk/")
-    Call<Void> createWalk(@Body Photowalk photowalk);
+    Call<Void> createWalk(@Body Photowalk photowalk,@Header("token")String token );
 
 }

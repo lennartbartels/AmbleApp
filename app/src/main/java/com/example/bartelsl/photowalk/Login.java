@@ -87,7 +87,7 @@ public class Login extends Activity {
             public void onResponse(Call<String> call, Response<String> response) {
 
 
-
+                RestClient.setToken(response.body());
                     Toast.makeText(Login.this, "Login successful.", Toast.LENGTH_SHORT).show();
                     Intent moveToRegister = new Intent(Login.this, Home.class);
                     startActivity(moveToRegister);

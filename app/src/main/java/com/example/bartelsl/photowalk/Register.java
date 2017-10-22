@@ -13,6 +13,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import amble.exceptions.NotRegisteredException;
 import amble.main.MainActivity;
 import amble.main.RestClient;
 import amble.model.User;
@@ -83,7 +84,10 @@ public class Register extends Activity implements AdapterView.OnItemSelectedList
         accountcall.enqueue(new Callback<Void>() {
             @Override
             public void onResponse(Call<Void> call, Response<Void> response) {
-                retrofit.getUserByUsername(user.getUsername()).enqueue(new Callback<User>() {
+
+                String token = RestClient.getToken();
+                if (token == null ){throw new NotRegisteredException();}
+                retrofit.getUserByUsername(user.getUsername(),token).enqueue(new Callback<User>() {
                     @Override
                     public void onResponse(Call<User> call, Response<User> response) {
                         User usr = response.body();

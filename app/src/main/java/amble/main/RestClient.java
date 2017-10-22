@@ -20,6 +20,14 @@ public class RestClient {
     private static PhotowalkApiService photowalkApiService;
     private static User currentUser;
 
+    public static String getToken() {
+        return token;
+    }
+
+    public static void setToken(String token) {
+        RestClient.token = token;
+    }
+
     private static String token;
 
     private static Photowalk currentPhotowalk;
