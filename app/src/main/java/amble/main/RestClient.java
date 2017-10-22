@@ -1,6 +1,7 @@
 package amble.main;
 
 import amble.model.User;
+import amble.model.Photowalk;
 import amble.service.PhotowalkApiService;
 import amble.service.UserClient;
 import retrofit2.Retrofit;
@@ -14,7 +15,9 @@ public class RestClient {
     private static String baseUrl = "http://10.0.2.2:8080/api/";
     private static UserClient userClient;
     private static PhotowalkApiService photoWalk;
+    private static PhotowalkApiService photowalkApiService;
     private static User currentUser;
+    private static Photowalk currentPhotowalk;
 
     public static void init() {
 
@@ -45,4 +48,8 @@ public class RestClient {
 
     public static PhotowalkApiService getPhotoWalk(){ return photoWalk;}
 
+
+    public static PhotowalkApiService getPhotowalkApiService() {
+        return photowalkApiService;
+    }
 }
