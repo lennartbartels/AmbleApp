@@ -16,14 +16,13 @@ public interface PhotowalkApiService {
     @GET("/walks/")
     Call<List<Photowalk>> getPhotowalks(@Body Photowalk photowalk);
 
-<<<<<<< HEAD
+
     Call<List<Photowalk>> getPhotowalks();
-=======
+
     @GET("/walks/")
     Call<Photowalk> getSinglePW(String name);
 
     @POST("/createwalk/")
     Call<Void> createWalk(@Body Photowalk photowalk);
 
->>>>>>> 85ea8d49bccce454ab976c826d36a7eedd5bafda
 }
