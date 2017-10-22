@@ -12,7 +12,19 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import java.util.List;
+
+import amble.main.RestClient;
+import amble.model.Photowalk;
+import amble.model.User;
+import amble.service.PhotowalkApiService;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
+import static com.example.bartelsl.photowalk.R.id.lvWalks;
 import static com.example.bartelsl.photowalk.R.id.parent;
+import static java.util.Collections.addAll;
 
 public class Home extends Activity {
 
@@ -20,17 +32,42 @@ public class Home extends Activity {
     Button CreateWalkBtn;
     Button Walk1Btn;
     Button LogoutBtn;
+    ListView lvWalks;
+    PhotowalkApiService retrofit;
+    private Object Response;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        String[] walks = {"Walk 1", "Walk 2", "Walk 3", "..."}; //nur Beispiel, damit etwas angezeigt wird!
-        ListAdapter adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, walks);
-        ListView lvWalks = (ListView) findViewById(R.id.lvWalks);
-        lvWalks.setAdapter(adapter);
 
+        Call<List<Photowalk>> call = retrofit.getPhotowalks();
+        call.enqueue(new Callback<List<Photowalk>>() {
+            @Override
+            public void onResponse(Call<List<Photowalk>> call, Response<List<Photowalk>> response) {
+                List<Photowalk> walks = response.body();
+                lvWalks = (ListView) findViewById(R.id.lvWalks);
+                ListAdapter adapter = new ArrayAdapter<Photowalk>(Home.this, android.R.layout.simple_list_item_1, walks);
+                lvWalks.setAdapter(adapter);
+
+
+                }
+
+            @Override
+            public void onFailure(Call<List<Photowalk>> call, Throwable t) {
+
+            }
+
+
+
+            });
+       /* String[] walks = {"Walk 1", "Walk 2", "Walk 3", "..."}; //nur Beispiel, damit etwas angezeigt wird!
+        ListAdapter adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, walks);
+        ListView lvWalks = (ListView) findViewById(lvWalks);
+        lvWalks.setAdapter(adapter);
+*/
 
 
         CreateWalkBtn = (Button) findViewById(R.id.btnCreateWalk);
@@ -66,4 +103,10 @@ public class Home extends Activity {
     }
 
 
-}
+
+
+    }
+
+
+
+

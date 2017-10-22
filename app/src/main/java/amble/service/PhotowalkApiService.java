@@ -14,4 +14,6 @@ import retrofit2.http.GET;
 public interface PhotowalkApiService {
     @GET("/walks/")
     Call<List<Photowalk>> getPhotowalks(@Body Photowalk photowalk);
+
+    Call<List<Photowalk>> getPhotowalks();
 }
