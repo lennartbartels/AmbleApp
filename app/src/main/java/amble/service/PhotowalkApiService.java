@@ -17,6 +17,9 @@ public interface PhotowalkApiService {
     @GET("/walks/")
     Call<List<Photowalk>> getPhotowalks(@Body Photowalk photowalk, @Header("token")String token);
 
+
+    Call<List<Photowalk>> getPhotowalks();
+
     @GET("/walks/")
     Call<Photowalk> getSinglePW(String name,@Header("token")String token);
 

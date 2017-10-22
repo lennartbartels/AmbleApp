@@ -1,9 +1,10 @@
 package com.example.bartelsl.photowalk;
 
+import android.app.Activity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class MyWalks extends AppCompatActivity {
+public class MyWalks extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
