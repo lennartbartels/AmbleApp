@@ -2,8 +2,8 @@
     <string name="app_name">PhotoWalk</string>
 
     <string-array name="role">
-        <item name="Photographer">Photographer</item>
+        <item name="Photographer" textColor="black">Photographer</item>
         <item name="Model">Model</item>
-        <item name="Photographer/Model">Photographer/Model</item>
+        <!--<item name="Photographer/Model">Photographer/Model</item>-->
     </string-array>
 </resources>
