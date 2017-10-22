@@ -29,36 +29,46 @@
         android:layout_height="wrap_content"
         android:text="Create Walk"
         style="@style/Button1"
-        android:layout_above="@+id/btnWalk1"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignBaseline="@+id/btnPreviousWalks"
+        android:layout_alignBottom="@+id/btnPreviousWalks"
+        android:layout_toEndOf="@+id/btnMyWalks" />
 
     <Button
-        android:id="@+id/btnWalk1"
+        android:id="@+id/btnMyWalks"
         style="@style/Button1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="(PROVISORISCH)"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="14dp" />
+        android:text="My Walks"
+        android:layout_alignBaseline="@+id/btnCreateWalk"
+        android:layout_alignBottom="@+id/btnCreateWalk"
+        android:layout_alignStart="@+id/lvWalks" />
+
+    <Button
+        android:id="@+id/btnPreviousWalks"
+        style="@style/Button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Previous Walks"
+        android:layout_below="@+id/lvWalks"
+        android:layout_toEndOf="@+id/btnCreateWalk"
+        android:layout_marginTop="11dp" />
 
     <Button
         android:id="@+id/btnLogout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Logout"
-        android:layout_below="@+id/btnCreateWalk"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_below="@+id/btnPreviousWalks"
+        android:layout_alignEnd="@+id/btnPreviousWalks" />
 
     <ListView
         android:id="@+id/lvWalks"
-        android:layout_width="300dp"
-        android:layout_height="330dp"
+        android:layout_width="340dp"
+        android:layout_height="340dp"
         android:layout_below="@+id/btnSearch"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="12dp"
+        android:background="#27c3bc"
         android:divider="#585858"
         android:dividerHeight="1dp"
         android:scrollbars="none|vertical"

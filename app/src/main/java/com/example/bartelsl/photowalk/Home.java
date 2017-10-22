@@ -30,7 +30,8 @@ public class Home extends Activity {
 
     //ListView WalkListe
     Button CreateWalkBtn;
-    Button Walk1Btn;
+    Button MyWalksBtn;
+    Button PreviousWalksBtn;
     Button LogoutBtn;
     ListView lvWalks;
     PhotowalkApiService retrofit;
@@ -71,7 +72,8 @@ public class Home extends Activity {
 
 
         CreateWalkBtn = (Button) findViewById(R.id.btnCreateWalk);
-        Walk1Btn = (Button) findViewById(R.id.btnWalk1);
+        MyWalksBtn = (Button) findViewById(R.id.btnMyWalks);
+        PreviousWalksBtn = (Button) findViewById(R.id.btnPreviousWalks);
         LogoutBtn = (Button) findViewById(R.id.btnLogout);
 
 
@@ -84,10 +86,24 @@ public class Home extends Activity {
             }
         });
 
-        Walk1Btn.setOnClickListener(new View.OnClickListener() {
+        MyWalksBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent moveToRegister = new Intent(Home.this, JoinWalk.class);
+                Intent moveToRegister = new Intent(Home.this, MyWalks.class);
+                startActivity(moveToRegister);
+            }
+        });
+        MyWalksBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent moveToRegister = new Intent(Home.this, MyWalks.class);
+                startActivity(moveToRegister);
+            }
+        });
+        PreviousWalksBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent moveToRegister = new Intent(Home.this, PreviousWalks.class);
                 startActivity(moveToRegister);
             }
         });

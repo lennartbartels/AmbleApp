@@ -28,6 +28,7 @@ public class Login extends Activity {
     Button signInBtn;
     EditText loginName;
     EditText password;
+    Button button;//*******************************************************************************
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +43,7 @@ public class Login extends Activity {
 
         registerHere = (TextView) findViewById(R.id.tvRegsiterHere);
         signInBtn = (Button) findViewById(R.id.btnSignIn);
+        button = (Button) findViewById(R.id.button);//***********************************************
 
         registerHere.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,6 +52,14 @@ public class Login extends Activity {
                 startActivity(moveToRegister);
             }
         });
+
+        button.setOnClickListener(new View.OnClickListener() {//************************************
+            @Override
+            public void onClick(View v) {
+                Intent moveToRegister = new Intent(Login.this, Home.class);
+                startActivity(moveToRegister);
+            }
+        });//***************************************************************************************
 
         signInBtn.setOnClickListener(new View.OnClickListener() {
             @Override
