@@ -82,7 +82,7 @@ public class Login extends Activity {
             public void onResponse(Call<User> call, Response<User> response) {
 
                 User usr = response.body();
-                if (usr != null && usr.getPassword().equals(passwrd)) {
+                if (usr != null && usr.getPassword().equals(password)) {
                     RestClient.setCurrentUser(usr);
                     Toast.makeText(Login.this, "Login successful.", Toast.LENGTH_SHORT).show();
                     Intent moveToRegister = new Intent(Login.this, Home.class);
