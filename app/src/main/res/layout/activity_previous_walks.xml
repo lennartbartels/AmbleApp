@@ -17,14 +17,16 @@
         android:background="#27c3bc"
         android:divider="#585858"
         android:dividerHeight="1dp" />
+
     <TextView
         android:id="@+id/tvmyPreviousWalks"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/lvPreviousWalks"
         android:layout_marginTop="39dp"
         android:text="My Previous Walks:"
         android:textColor="@android:color/black"
         android:textSize="18sp"
-        android:layout_alignParentTop="true"
-        android:layout_alignStart="@+id/lvPreviousWalks" />
+        tools:ignore="HardcodedText" />
 </RelativeLayout>
