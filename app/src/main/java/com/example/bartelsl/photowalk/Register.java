@@ -78,7 +78,7 @@ public class Register extends Activity implements AdapterView.OnItemSelectedList
     }
 
     private void sendNetworkrequest(User user) {
-        //UserClient client = retrofit.getUserClient();
+        //UserClient client = userClient.getUserClient();
         Call<Void> accountcall = retrofit.createAccount(user);
         accountcall.enqueue(new Callback<Void>() {
             @Override
