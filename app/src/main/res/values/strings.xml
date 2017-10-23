@@ -6,4 +6,5 @@
         <item name="Model">Model</item>
         <!--<item name="Photographer/Model">Photographer/Model</item>-->
     </string-array>
+    <string name="title_activity_map">Map</string>
 </resources>
