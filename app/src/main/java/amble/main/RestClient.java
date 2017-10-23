@@ -4,6 +4,7 @@ import amble.model.User;
 import amble.model.Photowalk;
 import amble.service.PhotowalkApiService;
 import amble.service.SessionClient;
+import amble.service.StringConverterFactory;
 import amble.service.UserClient;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -19,6 +20,7 @@ public class RestClient {
     private static PhotowalkApiService photoWalk;
     private static PhotowalkApiService photowalkApiService;
     private static User currentUser;
+
 
     public static String getToken() {
         return token;
@@ -43,6 +45,7 @@ public class RestClient {
 
         Retrofit restAdapter = new Retrofit.Builder()
                 .baseUrl(baseUrl)
+                .addConverterFactory(new StringConverterFactory())
                 .addConverterFactory(GsonConverterFactory.create())
 
                 .build();

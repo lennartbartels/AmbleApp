@@ -93,8 +93,7 @@ public class Register extends Activity implements AdapterView.OnItemSelectedList
                     @Override
                     public void onResponse(Call<String> call, Response<String> response) {
 
-                        RestClient.setToken(response.body());
-                        Toast.makeText(Register.this, "Login successful.", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Register.this, "register successful.", Toast.LENGTH_SHORT).show();
                         Intent moveToRegister = new Intent(Register.this, Home.class);
                         startActivity(moveToRegister);
 
@@ -104,7 +103,7 @@ public class Register extends Activity implements AdapterView.OnItemSelectedList
 
                     @Override
                     public void onFailure(Call<String> call, Throwable t) {
-                        Toast toast = Toast.makeText(Register.this,"Login failed .", Toast.LENGTH_SHORT);
+                        Toast toast = Toast.makeText(Register.this,"register failed .", Toast.LENGTH_SHORT);
                         toast.show();
                     }
 

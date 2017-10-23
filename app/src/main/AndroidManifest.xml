@@ -33,13 +33,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="amble.main.MainActivity" />
         <activity android:name=".Register" />
         <activity android:name=".CreateWalk" />
         <activity android:name=".JoinWalk" />
         <activity android:name=".Home" />
         <activity android:name=".MyWalks" />
         <activity android:name=".PreviousWalks" />
+
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -55,6 +55,7 @@
         <activity
             android:name=".Map"
             android:label="@string/title_activity_map"></activity>
+
     </application>
 
 </manifest>

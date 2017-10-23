@@ -13,6 +13,9 @@ android {
         jackOptions {
             enabled true
         }
+        lintOptions {
+            abortOnError false
+        }
         multiDexEnabled true //important
     }
     buildTypes {

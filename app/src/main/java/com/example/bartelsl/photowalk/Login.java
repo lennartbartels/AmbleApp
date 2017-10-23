@@ -66,7 +66,7 @@ public class Login extends Activity {
         signInBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String username = loginName.getText().toString().trim();
+                String username = Login.this.loginName.getText().toString().trim();
                 String password = Login.this.password.getText().toString().trim();
                 if (!Objects.equals(username, "") && !Objects.equals(password, "")) {
                     sendNetworkrequest(username, password);
@@ -89,8 +89,9 @@ public class Login extends Activity {
 
                     RestClient.setToken(response.body());
                     Toast.makeText(Login.this, "Login successful.", Toast.LENGTH_SHORT).show();
-                    Intent moveToRegister = new Intent(Login.this, Home.class);
-                    startActivity(moveToRegister);
+                   Intent moveToRegister = new Intent(Login.this, Home.class);
+
+                   startActivity(moveToRegister);
 
 
                 }
@@ -98,6 +99,7 @@ public class Login extends Activity {
 
             @Override
             public void onFailure(Call<String> call, Throwable t) {
+
                 Toast toast = Toast.makeText(Login.this,"Login failed .", Toast.LENGTH_SHORT);
                 toast.show();
             }
