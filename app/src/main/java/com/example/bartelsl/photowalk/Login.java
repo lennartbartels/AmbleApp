@@ -78,7 +78,7 @@ public class Login extends Activity {
 
     private void sendNetworkrequest(String username, String password) {
         //UserClient client = userClient.getUserClient();
-         Credentials credentials = new Credentials ();
+        Credentials credentials = new Credentials ();
         credentials.setPassword(password);
         credentials.setUsername(username);
         Call<String> loginCall = sessionClient.login(credentials);
@@ -87,7 +87,7 @@ public class Login extends Activity {
             public void onResponse(Call<String> call, Response<String> response) {
 
 
-                RestClient.setToken(response.body());
+                    RestClient.setToken(response.body());
                     Toast.makeText(Login.this, "Login successful.", Toast.LENGTH_SHORT).show();
                     Intent moveToRegister = new Intent(Login.this, Home.class);
                     startActivity(moveToRegister);

@@ -16,6 +16,7 @@ import android.widget.Toast;
 import amble.exceptions.NotRegisteredException;
 import amble.main.MainActivity;
 import amble.main.RestClient;
+import amble.model.Credentials;
 import amble.model.User;
 import amble.service.UserClient;
 import retrofit2.Call;
@@ -84,7 +85,33 @@ public class Register extends Activity implements AdapterView.OnItemSelectedList
         accountcall.enqueue(new Callback<Void>() {
             @Override
             public void onResponse(Call<Void> call, Response<Void> response) {
+                Credentials credentials = new Credentials ();
+                credentials.setPassword(user.getPassword());
+                credentials.setUsername(user.getUsername());
+                Call<String> loginCall = RestClient.getSessionClient().login(credentials);
+                loginCall.enqueue(new Callback<String>() {
+                    @Override
+                    public void onResponse(Call<String> call, Response<String> response) {
 
+                        RestClient.setToken(response.body());
+                        Toast.makeText(Register.this, "Login successful.", Toast.LENGTH_SHORT).show();
+                        Intent moveToRegister = new Intent(Register.this, Home.class);
+                        startActivity(moveToRegister);
+
+
+                    }
+
+
+                    @Override
+                    public void onFailure(Call<String> call, Throwable t) {
+                        Toast toast = Toast.makeText(Register.this,"Login failed .", Toast.LENGTH_SHORT);
+                        toast.show();
+                    }
+
+
+                });
+
+                /*
                 String token = RestClient.getToken();
                 if (token == null ){throw new NotRegisteredException();}
                 retrofit.getUserByUsername(user.getUsername(),token).enqueue(new Callback<User>() {
@@ -107,7 +134,7 @@ public class Register extends Activity implements AdapterView.OnItemSelectedList
 
                         Toast.makeText(Register.this, "Registration failed.", Toast.LENGTH_SHORT).show();
                     }
-                });
+                });*/
 
             }
 

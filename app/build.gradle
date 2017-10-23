@@ -15,7 +15,6 @@ android {
         }
         multiDexEnabled true //important
     }
-    lintOptions{abortOnError false}
     buildTypes {
         release {
             minifyEnabled false
