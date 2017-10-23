@@ -12,14 +12,14 @@ public class User{
     private String username ;
     private String firstname;
     private String lastname;
-    private String emailadress;
+    private String emailaddress;
     private String password;
 
-    public User(String username, String firstname, String lastname, String emailadress, String password) {
+    public User(String username, String firstname, String lastname, String emailaddress, String password) {
         this.username = username;
         this.firstname = firstname;
         this.lastname = lastname;
-        this.emailadress = emailadress;
+        this.emailaddress = emailaddress;
         this.password = password;
     }
 
@@ -32,7 +32,7 @@ public class User{
                 "username='" + username + '\'' +
                 ", firstname='" + firstname + '\'' +
                 ", lastname='" + lastname + '\'' +
-                ", emailadress='" + emailadress + '\'' +
+                ", emailadress='" + emailaddress + '\'' +
                 '}';
     }
 
@@ -60,12 +60,12 @@ public class User{
         this.lastname = lastname;
     }
 
-    public String getEmailadress() {
-        return emailadress;
+    public String getEmailaddress() {
+        return emailaddress;
     }
 
-    public void setEmailadress(String emailadress) {
-        this.emailadress = emailadress;
+    public void setEmailaddress(String emailadress) {
+        this.emailaddress = emailadress;
     }
 
     public String getPassword(){ return password;}

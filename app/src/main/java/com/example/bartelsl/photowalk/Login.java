@@ -12,9 +12,10 @@ import android.widget.Toast;
 
 import java.util.Objects;
 
-import amble.main.MainActivity;
 import amble.main.RestClient;
+import amble.model.Credentials;
 import amble.model.User;
+import amble.service.SessionClient;
 import amble.service.UserClient;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -22,8 +23,8 @@ import retrofit2.Response;
 
 public class Login extends Activity {
 
-    UserClient retrofit;
-
+    UserClient userClient;
+    SessionClient sessionClient;
     TextView registerHere;
     Button signInBtn;
     EditText loginName;
@@ -37,7 +38,8 @@ public class Login extends Activity {
         setContentView(R.layout.activity_login);
         // Initialize Rest Client for later usage.
         initRestClient();
-        retrofit = RestClient.getUserClient();
+        userClient = RestClient.getUserClient();
+        sessionClient = RestClient.getSessionClient();
         loginName = findViewById(R.id.etUsername);
         password = findViewById(R.id.etPassword);
 
@@ -74,28 +76,29 @@ public class Login extends Activity {
         });
     }
 
-    private void sendNetworkrequest(String usrName, String passwrd) {
-        //UserClient client = retrofit.getUserClient();
-        Call<User> accountcall = retrofit.getUserByUsername(usrName);
-        accountcall.enqueue(new Callback<User>() {
+    private void sendNetworkrequest(String username, String password) {
+        //UserClient client = userClient.getUserClient();
+        Credentials credentials = new Credentials ();
+        credentials.setPassword(password);
+        credentials.setUsername(username);
+        Call<String> loginCall = sessionClient.login(credentials);
+        loginCall.enqueue(new Callback<String>() {
             @Override
-            public void onResponse(Call<User> call, Response<User> response) {
+            public void onResponse(Call<String> call, Response<String> response) {
 
-                User usr = response.body();
-                if (usr != null && usr.getPassword().equals(passwrd)) {
-                    RestClient.setCurrentUser(usr);
+
+                    RestClient.setToken(response.body());
                     Toast.makeText(Login.this, "Login successful.", Toast.LENGTH_SHORT).show();
                     Intent moveToRegister = new Intent(Login.this, Home.class);
                     startActivity(moveToRegister);
-                } else {
-                    Toast toast = Toast.makeText(Login.this,"Login failed.", Toast.LENGTH_SHORT);
-                    toast.show();
+
+
                 }
-            }
+
 
             @Override
-            public void onFailure(Call<User> call, Throwable t) {
-                Toast toast = Toast.makeText(Login.this,"Login failed completely.", Toast.LENGTH_SHORT);
+            public void onFailure(Call<String> call, Throwable t) {
+                Toast toast = Toast.makeText(Login.this,"Login failed .", Toast.LENGTH_SHORT);
                 toast.show();
             }
 
