@@ -101,12 +101,4 @@
         tools:layout_editor_absoluteX="131dp"
         tools:layout_editor_absoluteY="279dp" />
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_toStartOf="@+id/btnSignIn"
-        android:text="Button" />
-
 </RelativeLayout>
