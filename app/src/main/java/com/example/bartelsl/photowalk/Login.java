@@ -66,10 +66,10 @@ public class Login extends Activity {
         signInBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String name = loginName.getText().toString().trim();
-                String passw = password.getText().toString().trim();
-                if (!Objects.equals(name, "") && !Objects.equals(passw, "")) {
-                    sendNetworkrequest(name, passw);
+                String username = loginName.getText().toString().trim();
+                String password = Login.this.password.getText().toString().trim();
+                if (!Objects.equals(username, "") && !Objects.equals(password, "")) {
+                    sendNetworkrequest(username, password);
                 }
 
             }
