@@ -35,7 +35,7 @@ public class Home extends Activity {
     Button LogoutBtn;
     ListView lvWalks;
     PhotowalkApiService retrofit;
-    private Object Response;
+
 
 
     @Override
@@ -52,6 +52,16 @@ public class Home extends Activity {
                 lvWalks = (ListView) findViewById(R.id.lvWalks);
                 ListAdapter adapter = new ArrayAdapter<Photowalk>(Home.this, android.R.layout.simple_list_item_1, walks);
                 lvWalks.setAdapter(adapter);
+                lvWalks.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                        Intent intent = new Intent(Home.this, JoinWalk.class);
+
+                        startActivity(intent);
+
+
+                    }
+                });
 
 
                 }
