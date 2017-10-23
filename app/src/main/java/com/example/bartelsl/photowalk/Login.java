@@ -29,7 +29,7 @@ public class Login extends Activity {
     Button signInBtn;
     EditText loginName;
     EditText password;
-    Button button;//*******************************************************************************
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +45,7 @@ public class Login extends Activity {
 
         registerHere = (TextView) findViewById(R.id.tvRegsiterHere);
         signInBtn = (Button) findViewById(R.id.btnSignIn);
-        button = (Button) findViewById(R.id.button);//***********************************************
+
 
         registerHere.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -55,21 +55,15 @@ public class Login extends Activity {
             }
         });
 
-        button.setOnClickListener(new View.OnClickListener() {//************************************
-            @Override
-            public void onClick(View v) {
-                Intent moveToRegister = new Intent(Login.this, Home.class);
-                startActivity(moveToRegister);
-            }
-        });//***************************************************************************************
+
 
         signInBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String name = loginName.getText().toString().trim();
-                String passw = password.getText().toString().trim();
-                if (!Objects.equals(name, "") && !Objects.equals(passw, "")) {
-                    sendNetworkrequest(name, passw);
+                String username = loginName.getText().toString().trim();
+                String password = Login.this.password.getText().toString().trim();
+                if (!Objects.equals(username, "") && !Objects.equals(password, "")) {
+                    sendNetworkrequest(username, password);
                 }
 
             }
