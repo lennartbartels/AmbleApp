@@ -26,7 +26,7 @@ import retrofit2.Response;
 
 public class CreateWalk extends Activity {
 
-    PhotowalkApiService retrofit = RestClient.getPhotowalkApiService();
+    PhotowalkApiService retrofit = RestClient.getPhotoWalk();
 
     EditText eTName;
     EditText eTDate;
@@ -49,17 +49,18 @@ public class CreateWalk extends Activity {
         eTDuration = (EditText) findViewById(R.id.eTDuration);
         eTDescription = (EditText) findViewById(R.id.eTDescription);
         // initialize onClick
-        btnCreateWalk.setOnClickListener(new View.OnClickListener() {
+        btnCreateWalk.setOnClickListener(new View.OnClickListener()
+        {
             @Override
             public void onClick(View v) {
                 Photowalk photowalk = new Photowalk(
                         eTName.getText().toString(),
-                        eTDate.getText().toString(),
+                        //eTDate.getText().toString(),
                         eTStartPoint.getText().toString(),
                         eTEndPoint.getText().toString(),
                         Integer.parseInt(eTDuration.getText().toString()),
                         eTDescription.getText().toString()
-                );
+                        );
 
                 sendNetworkrequest(photowalk);
             }
@@ -84,8 +85,8 @@ public class CreateWalk extends Activity {
                         Photowalk phwalk = response.body();
                         if (phwalk != null) {
                             Toast.makeText(CreateWalk.this, "Create Walk successful:" + response.body().getName(), Toast.LENGTH_SHORT).show();
-                            Intent moveToRegister = new Intent(CreateWalk.this, Home.class);
-                            startActivity(moveToRegister);
+                            Intent moveToHome= new Intent(CreateWalk.this, Home.class);
+                            startActivity(moveToHome);
                         } else {
                             Toast.makeText(CreateWalk.this, "Creation failed.", Toast.LENGTH_SHORT).show();
                         }

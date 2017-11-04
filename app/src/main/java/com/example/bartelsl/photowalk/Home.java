@@ -34,7 +34,7 @@ public class Home extends Activity {
     Button PreviousWalksBtn;
     Button LogoutBtn;
     ListView lvWalks;
-    PhotowalkApiService retrofit;
+    PhotowalkApiService retrofit =  RestClient.getPhotoWalk();
 
 
 
@@ -44,7 +44,8 @@ public class Home extends Activity {
         setContentView(R.layout.activity_home);
 
 
-        Call<List<Photowalk>> call = retrofit.getPhotowalks();
+        try{Call<List<Photowalk>> call = retrofit.getPhotowalks();
+
         call.enqueue(new Callback<List<Photowalk>>() {
             @Override
             public void onResponse(Call<List<Photowalk>> call, Response<List<Photowalk>> response) {
@@ -73,7 +74,8 @@ public class Home extends Activity {
 
 
 
-            });
+            });}
+        catch(Exception e){System.out.println (e.getMessage());}
        /* String[] walks = {"Walk 1", "Walk 2", "Walk 3", "..."}; //nur Beispiel, damit etwas angezeigt wird!
         ListAdapter adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, walks);
         ListView lvWalks = (ListView) findViewById(lvWalks);

@@ -5,6 +5,8 @@ import java.util.Date;
 
 import com.google.gson.annotations.SerializedName;
 
+import okhttp3.Route;
+
 
 /**
  * Created by hintzl on 08.10.2017.
@@ -27,14 +29,17 @@ public class Photowalk extends Activity{
     private String endpoint;
     @SerializedName("owner")
     private User owner;
+    @SerializedName("route")
+    private Route route;
 
-    public Photowalk(String name, String date, String startpoint, String endpoint, Integer duration, String description) {
+    public Photowalk(String name, /*String date,*/ String startpoint, String endpoint, Integer duration, String description) {
         this.name = name;
-        this.date = date;
+       // this.date = date;
         this.startpoint = startpoint;
         this.endpoint = endpoint;
         this.duration = duration;
         this.description = description;
+
     }
 
     public Integer getPhotowalkId() {
