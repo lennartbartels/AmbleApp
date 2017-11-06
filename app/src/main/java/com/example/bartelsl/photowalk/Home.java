@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import java.util.List;
 
+import amble.exceptions.NotLoggedinException;
 import amble.main.RestClient;
 import amble.model.Photowalk;
 import amble.model.User;
@@ -35,6 +36,7 @@ public class Home extends Activity {
     Button LogoutBtn;
     ListView lvWalks;
     PhotowalkApiService retrofit =  RestClient.getPhotoWalk();
+    Photowalk photowalk;
 
 
 
@@ -44,9 +46,12 @@ public class Home extends Activity {
         setContentView(R.layout.activity_home);
 
 
-        try{Call<List<Photowalk>> call = retrofit.getPhotowalks();
+        try{String token = RestClient.getToken();
+            if (token == null ){throw new NotLoggedinException();}
 
-        call.enqueue(new Callback<List<Photowalk>>() {
+            Call<List<Photowalk>> call = retrofit.getPhotowalks(token);
+
+            call.enqueue(new Callback<List<Photowalk>>() {
             @Override
             public void onResponse(Call<List<Photowalk>> call, Response<List<Photowalk>> response) {
                 List<Photowalk> walks = response.body();
@@ -69,13 +74,15 @@ public class Home extends Activity {
 
             @Override
             public void onFailure(Call<List<Photowalk>> call, Throwable t) {
-
+                System.out.println("abc");
             }
 
 
 
             });}
-        catch(Exception e){System.out.println (e.getMessage());}
+        catch(Exception e){
+            System.out.println (e.getMessage());
+        }
        /* String[] walks = {"Walk 1", "Walk 2", "Walk 3", "..."}; //nur Beispiel, damit etwas angezeigt wird!
         ListAdapter adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, walks);
         ListView lvWalks = (ListView) findViewById(lvWalks);

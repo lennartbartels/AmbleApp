@@ -3,6 +3,8 @@ package amble.service;
 import java.util.List;
 
 import amble.model.Photowalk;
+import okhttp3.MediaType;
+import okhttp3.RequestBody;
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
@@ -14,16 +16,17 @@ import retrofit2.http.POST;
  */
 
 public interface PhotowalkApiService {
-    @GET("/walks/")
-    Call<List<Photowalk>> getPhotowalks(@Body Photowalk photowalk, @Header("token")String token);
+    @GET("/api/photowalks/")
+    Call<List<Photowalk>> getPhotowalks( @Header("token")String token);
 
+   /* @GET("/api/photowalks/")
+    Call<List<Photowalk>> getPhotowalks();*/
 
-    Call<List<Photowalk>> getPhotowalks();
-
-    @GET("/walks/")
+    @GET("/api/photowalks/")
     Call<Photowalk> getSinglePW(String name,@Header("token")String token);
 
-    @POST("/createwalk/")
+    @POST("/createwalk")
     Call<Void> createWalk(@Body Photowalk photowalk,@Header("token")String token );
+   // RequestBody photowalk = RequestBody.create(MediaType.parse("/createwalk"), photowalk.toString());
 
 }
