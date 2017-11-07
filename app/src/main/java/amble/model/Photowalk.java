@@ -12,7 +12,7 @@ import okhttp3.Route;
  * Created by hintzl on 08.10.2017.
  */
 
-public class Photowalk extends Activity{
+public class Photowalk {
     @SerializedName("photowalkId")
     private Integer photowalkId;
     @SerializedName("name")
@@ -41,6 +41,7 @@ public class Photowalk extends Activity{
         this.description = description;
 
     }
+    public Photowalk(){}
 
     public Integer getPhotowalkId() {
         return photowalkId;

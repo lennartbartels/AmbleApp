@@ -14,6 +14,7 @@ import java.util.Objects;
 
 import amble.main.RestClient;
 import amble.model.Credentials;
+import amble.model.SessionDto;
 import amble.model.User;
 import amble.service.SessionClient;
 import amble.service.UserClient;
@@ -75,13 +76,13 @@ public class Login extends Activity {
         Credentials credentials = new Credentials ();
         credentials.setPassword(password);
         credentials.setUsername(username);
-        Call<String> loginCall = sessionClient.login(credentials);
-        loginCall.enqueue(new Callback<String>() {
+        Call<SessionDto> loginCall = sessionClient.login(credentials);
+        loginCall.enqueue(new Callback<SessionDto>() {
             @Override
-            public void onResponse(Call<String> call, Response<String> response) {
+            public void onResponse(Call<SessionDto> call, Response<SessionDto> response) {
 
 
-                    RestClient.setToken(response.body());
+                    RestClient.setToken(response.body().getToken());
                     Toast.makeText(Login.this, "Login successful.", Toast.LENGTH_SHORT).show();
                    Intent moveToRegister = new Intent(Login.this, Home.class);
 
@@ -92,7 +93,7 @@ public class Login extends Activity {
 
 
             @Override
-            public void onFailure(Call<String> call, Throwable t) {
+            public void onFailure(Call<SessionDto> call, Throwable t) {
 
                 Toast toast = Toast.makeText(Login.this,"Login failed .", Toast.LENGTH_SHORT);
                 toast.show();

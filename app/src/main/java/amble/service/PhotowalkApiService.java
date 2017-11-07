@@ -10,6 +10,7 @@ import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.Header;
 import retrofit2.http.POST;
+import retrofit2.http.Path;
 
 /**
  * Created by hintzl on 08.10.2017.
@@ -22,10 +23,10 @@ public interface PhotowalkApiService {
    /* @GET("/api/photowalks/")
     Call<List<Photowalk>> getPhotowalks();*/
 
-    @GET("/api/photowalks/")
-    Call<Photowalk> getSinglePW(String name,@Header("token")String token);
+    @GET("photowalks/{name}")
+    Call<Photowalk> getSinglePW(@Path("name") String name, @Header("token")String token);
 
-    @POST("photowalks/")
+    @POST("photowalks")
     Call<Void> createWalk(@Body Photowalk photowalk,@Header("token")String token );
    // RequestBody photowalk = RequestBody.create(MediaType.parse("/createwalk"), photowalk.toString());
 

@@ -3,30 +3,23 @@ package com.example.bartelsl.photowalk;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.AppCompatButton;
-import android.support.v7.widget.AppCompatEditText;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import java.util.Objects;
-
 import amble.exceptions.NotLoggedinException;
 import amble.main.RestClient;
 import amble.model.Photowalk;
-import amble.model.User;
 import amble.service.PhotowalkApiService;
-import amble.service.UserClient;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
 public class CreateWalk extends Activity {
 
-    PhotowalkApiService retrofit = RestClient.getPhotoWalk();
+    PhotowalkApiService retrofit = RestClient.getPhotowalkClient();
 
     EditText eTName;
     EditText eTDate;

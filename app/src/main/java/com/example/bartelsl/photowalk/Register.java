@@ -17,6 +17,7 @@ import amble.exceptions.NotRegisteredException;
 import amble.main.MainActivity;
 import amble.main.RestClient;
 import amble.model.Credentials;
+import amble.model.SessionDto;
 import amble.model.User;
 import amble.service.UserClient;
 import retrofit2.Call;
@@ -88,10 +89,10 @@ public class Register extends Activity implements AdapterView.OnItemSelectedList
                 Credentials credentials = new Credentials ();
                 credentials.setPassword(user.getPassword());
                 credentials.setUsername(user.getUsername());
-                Call<String> loginCall = RestClient.getSessionClient().login(credentials);
-                loginCall.enqueue(new Callback<String>() {
+                Call<SessionDto> loginCall = RestClient.getSessionClient().login(credentials);
+                loginCall.enqueue(new Callback<SessionDto>() {
                     @Override
-                    public void onResponse(Call<String> call, Response<String> response) {
+                    public void onResponse(Call<SessionDto> call, Response<SessionDto> response) {
 
                         Toast.makeText(Register.this, "register successful.", Toast.LENGTH_SHORT).show();
                         Intent moveToRegister = new Intent(Register.this, Home.class);
@@ -102,7 +103,7 @@ public class Register extends Activity implements AdapterView.OnItemSelectedList
 
 
                     @Override
-                    public void onFailure(Call<String> call, Throwable t) {
+                    public void onFailure(Call<SessionDto> call, Throwable t) {
                         Toast toast = Toast.makeText(Register.this,"register failed .", Toast.LENGTH_SHORT);
                         toast.show();
                     }

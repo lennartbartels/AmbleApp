@@ -3,6 +3,7 @@ package amble.service;
 
 
 import amble.model.Credentials;
+import amble.model.SessionDto;
 import amble.model.User;
 import retrofit2.Call;
 import retrofit2.http.Body;
@@ -21,7 +22,7 @@ public interface SessionClient {
 
 
         @POST("sessions")
-        Call <String> login (@Body Credentials credentials );
+        Call <SessionDto> login (@Body Credentials credentials );
 
         @DELETE("sessions/{session}")
         Call <Void> logout (@Path("session")String session);
