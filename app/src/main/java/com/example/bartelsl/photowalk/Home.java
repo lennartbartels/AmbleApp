@@ -49,9 +49,9 @@ public class Home extends Activity {
         try{String token = RestClient.getToken();
             if (token == null ){throw new NotLoggedinException();}
 
-            Call<List<Photowalk>> call = retrofit.getPhotowalks(token);
+            Call<List<Photowalk>> photowalksCall = retrofit.getPhotowalks(token);
 
-            call.enqueue(new Callback<List<Photowalk>>() {
+            photowalksCall.enqueue(new Callback<List<Photowalk>>() {
             @Override
             public void onResponse(Call<List<Photowalk>> call, Response<List<Photowalk>> response) {
                 List<Photowalk> walks = response.body();

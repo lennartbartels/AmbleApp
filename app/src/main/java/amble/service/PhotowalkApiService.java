@@ -16,7 +16,7 @@ import retrofit2.http.POST;
  */
 
 public interface PhotowalkApiService {
-    @GET("/api/photowalks/")
+    @GET("photowalks")
     Call<List<Photowalk>> getPhotowalks( @Header("token")String token);
 
    /* @GET("/api/photowalks/")
@@ -25,7 +25,7 @@ public interface PhotowalkApiService {
     @GET("/api/photowalks/")
     Call<Photowalk> getSinglePW(String name,@Header("token")String token);
 
-    @POST("/createwalk")
+    @POST("photowalks/")
     Call<Void> createWalk(@Body Photowalk photowalk,@Header("token")String token );
    // RequestBody photowalk = RequestBody.create(MediaType.parse("/createwalk"), photowalk.toString());
 
