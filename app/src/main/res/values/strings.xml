@@ -7,4 +7,12 @@
         <!--<item name="Photographer/Model">Photographer/Model</item>-->
     </string-array>
     <string name="title_activity_map">Map</string>
+    <string name="in_this_list_you_can_find_all_upcoming_walks_to_see_all_details_about_a_walk_that_interests_you_simply_click_on_it_you_can_also_search_for_walks_in_a_specific_location_otherwise_choose_where_to_navigate_next">In this list you can find all upcoming Walks. To see all Details about a Walk that interests you, simply click on it. You can also search for Walks in a specific location. Otherwise choose where to navigate next.</string>
+    <string name="what_to_do_in_home">What to do in Home</string>
+    <string name="these_information_will_show_up_as_walk_details_based_on_that_other_members_can_decide_if_they_want_to_participate_any_additional_information_can_be_put_into_the_description">These information will show up as Walk Details. Based on that other members can decide if they want to participate. Any additional information can be put into the description.</string>
+    <string name="what_to_do_in_create_walk">What to do in Create Walk</string>
+    <string name="what_to_do_in_join_walk">What to do in Join Walk</string>
+    <string name="here_you_can_see_all_necessary_information_about_the_walk_you_chose_including_all_participants_that_registered_for_it_you_can_join_this_walk_to_register_and_actively_attend_when_you_are_actually_there">Here you can see all necessary information about the Walk you chose, including all participants that registered for it. You can join this Walk to register and actively attend, when you are actually there.</string>
+    <string name="what_to_do_in_my_walks">What to do in My Walks</string>
+    <string name="here_is_a_list_of_all_former_walks_you_participated_in_you_are_able_to_see_all_other_participants_if_you_click_on_a_walk_these_two_lists_show_all_upcoming_walks_you_created_or_joined_as_participant">Here is a list of all former Walks you participated in. You are able to see all other participants if you click on a walk. These two lists show all upcoming Walks you created or joined as participant.</string>
 </resources>

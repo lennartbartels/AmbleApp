@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import amble.exceptions.NotLoggedinException;
@@ -28,12 +29,14 @@ public class CreateWalk extends Activity {
     EditText eTDuration;
     EditText eTDescription;
     Button btnCreateWalk;
+    ImageButton btnHelpCreate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_walk);
         //initializing the button and editTexts
+        btnHelpCreate = (ImageButton) findViewById(R.id.btnHelpCreate);
         btnCreateWalk = (Button) findViewById(R.id.btnCreateWalk);
         eTName = (EditText) findViewById(R.id.eTName);
         eTDate = (EditText) findViewById(R.id.eTDate);
@@ -43,6 +46,7 @@ public class CreateWalk extends Activity {
         eTDescription = (EditText) findViewById(R.id.eTDescription);
         // initialize onClick
         btnCreateWalk.setOnClickListener(new View.OnClickListener()
+
         {
             @Override
             public void onClick(View v) {
@@ -102,6 +106,14 @@ public class CreateWalk extends Activity {
             }
 
 
+        });
+
+        btnCreateWalk.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent moveToHelpHome = new Intent(CreateWalk.this,helpCreateWalk.class);
+                startActivity(moveToHelpHome);
+            }
         });
 
     }

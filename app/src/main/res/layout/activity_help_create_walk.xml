@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context="com.example.bartelsl.photowalk.JoinWalk"
+    tools:ignore="ExtraText">
+
+
+    <TextView
+        android:id="@+id/WhatToDoinCreate"
+        style="@style/EditText1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/exitHelpHome"
+        android:text="@string/what_to_do_in_create_walk"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        tools:layout_editor_absoluteX="107dp"
+        tools:layout_editor_absoluteY="45dp"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/ExplanationHOme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/these_information_will_show_up_as_walk_details_based_on_that_other_members_can_decide_if_they_want_to_participate_any_additional_information_can_be_put_into_the_description"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/WhatToDoinCreate"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="14sp"
+        tools:layout_editor_absoluteX="107dp"
+        tools:layout_editor_absoluteY="45dp"
+        android:layout_centerHorizontal="true" />
+
+    <ImageButton
+        android:id="@+id/exitHelpCreate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginEnd="23dp"
+        android:layout_marginTop="45dp"
+        app:srcCompat="@drawable/ic_close_black_24dp" />
+
+</RelativeLayout>

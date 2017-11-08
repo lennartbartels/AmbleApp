@@ -54,8 +54,11 @@
 
         <activity
             android:name=".Map"
-            android:label="@string/title_activity_map"></activity>
-
+            android:label="@string/title_activity_map" />
+        <activity android:name=".HelpHome" />
+        <activity android:name=".helpCreateWalk" />
+        <activity android:name=".helpJoinWalk" />
+        <activity android:name=".helpMyWalks"></activity>
     </application>
 
 </manifest>
