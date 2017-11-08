@@ -14,7 +14,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="60dp"
-        android:background="#27c3bc"
+        android:background="#9927c3bc"
         android:divider="#585858"
         android:dividerHeight="1dp" />
 
