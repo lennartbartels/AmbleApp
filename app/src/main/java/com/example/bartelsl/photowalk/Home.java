@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 
@@ -30,14 +31,13 @@ public class Home extends Activity {
     ListView lvWalks;
     PhotowalkApiService retrofit =  RestClient.getPhotowalkClient();
     Photowalk photowalk;
-
+    ImageButton Help;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-
 
         try{String token = RestClient.getToken();
             if (token == null ){throw new NotLoggedinException();}
@@ -49,7 +49,7 @@ public class Home extends Activity {
             public void onResponse(Call<List<Photowalk>> call, Response<List<Photowalk>> response) {
                 List<Photowalk> walks = response.body();
                 lvWalks = (ListView) findViewById(R.id.lvWalks);
-                ListAdapter adapter = new ArrayAdapter<Photowalk>(Home.this, android.R.layout.simple_list_item_1, walks);
+                ListAdapter adapter = new ArrayAdapter<Photowalk>(Home.this, android.R.layout.simple_list_item_1,walks);
                 lvWalks.setAdapter(adapter);
                 lvWalks.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                     @Override
@@ -87,6 +87,7 @@ public class Home extends Activity {
         MyWalksBtn = (Button) findViewById(R.id.btnMyWalks);
         PreviousWalksBtn = (Button) findViewById(R.id.btnPreviousWalks);
         LogoutBtn = (Button) findViewById(R.id.btnLogout);
+        Help = (ImageButton) findViewById(R.id.btnHelpHome);
 
 
 
@@ -128,6 +129,14 @@ public class Home extends Activity {
                 startActivity(moveToRegister);
             }
         });
+
+        Help.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent moveToHelpHome = new Intent(Home.this,HelpHome.class);
+                startActivity(moveToHelpHome);
+                }
+             });
     }
 
 

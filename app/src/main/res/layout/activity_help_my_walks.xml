@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context="com.example.bartelsl.photowalk.JoinWalk"
+    tools:ignore="ExtraText">
+
+
+    <TextView
+        android:id="@+id/WhatToDoinMyWalks"
+        style="@style/EditText1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/exitHelpHome"
+        android:text="@string/what_to_do_in_my_walks"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        tools:layout_editor_absoluteX="107dp"
+        tools:layout_editor_absoluteY="45dp"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/ExplanationMyWalks"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/here_is_a_list_of_all_former_walks_you_participated_in_you_are_able_to_see_all_other_participants_if_you_click_on_a_walk_these_two_lists_show_all_upcoming_walks_you_created_or_joined_as_participant"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/WhatToDoinMyWalks"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="14sp"
+        tools:layout_editor_absoluteX="107dp"
+        tools:layout_editor_absoluteY="45dp"
+        android:layout_centerHorizontal="true" />
+
+    <ImageButton
+        android:id="@+id/exitHelpMyWalk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginEnd="23dp"
+        android:layout_marginTop="45dp"
+        app:srcCompat="@drawable/ic_close_black_24dp" />
+
+</RelativeLayout>
